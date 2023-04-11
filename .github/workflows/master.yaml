@@ -1,0 +1,68 @@
+name: Build and Test
+
+on:
+  push:
+    branches: [ master ]
+  workflow_dispatch:
+
+jobs:
+
+  reverse:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Build
+        working-directory: reverse
+        run: cargo build
+      - name: Test
+        working-directory: reverse
+        run: cargo test
+      - name: Run
+        working-directory: reverse
+        run: cargo run
+
+  scrabble:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Build
+        working-directory: scrabble
+        run: cargo build
+      - name: Test
+        working-directory: scrabble
+        run: cargo test
+      - name: Run
+        working-directory: scrabble
+        run: cargo run
+
+  color:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Build
+        working-directory: color
+        run: cargo build
+      - name: Test
+        working-directory: color
+        run: cargo test
+      - name: Run
+        working-directory: color
+        run: cargo run
+
+  hangman:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Build
+        working-directory: hangman
+        run: cargo build
+      - name: Test
+        working-directory: hangman
+        run: cargo test
+      - name: Run
+        working-directory: hangman
+        run: cargo run
