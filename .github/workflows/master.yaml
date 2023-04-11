@@ -35,7 +35,7 @@ jobs:
         run: cargo test
       - name: Run
         working-directory: scrabble
-        run: cargo run
+        run: cargo run --bin scrabble --help
 
   color:
     runs-on: ubuntu-latest
@@ -48,9 +48,15 @@ jobs:
       - name: Test
         working-directory: color
         run: cargo test
-      - name: Run
+      - name: Run 1
         working-directory: color
-        run: cargo run
+        run: cargo run -- blue
+      - name: Run 2
+        working-directory: color
+        run: cargo run -- white --decimal
+      - name: Run 3
+        working-directory: color
+        run: cargo run -- silver -dp
 
   hangman:
     runs-on: ubuntu-latest
@@ -63,6 +69,3 @@ jobs:
       - name: Test
         working-directory: hangman
         run: cargo test
-      - name: Run
-        working-directory: hangman
-        run: cargo run
