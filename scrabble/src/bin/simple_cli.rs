@@ -93,16 +93,3 @@ fn main()
     }
     println!("Score = {}", score_sum * multiply);
 }
-
-#[cfg(test)]
-mod tests
-{
-    use super::*;
-
-    #[test]
-    fn test_get_arg()
-    {
-        //TODO
-    }
-
-}
